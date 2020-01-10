@@ -5,9 +5,9 @@ services:
   front:
     build:
       context: ./front
-    ports:
-      - 8080:8080
-    command: 'sh /app/start.sh'
+    command: "npm run serve"
     volumes:
-      - ./front:/app/:cached
-      - ./front/node_modules:/app/node_modules
+      - ./front/project-x:/app/:cached
+      - ./front/project-x/node_modules:/app/node_modules
+    ports:
+      - "8080:8080"
